@@ -13,12 +13,13 @@ const FRED_PROXY = 'https://financial-proxy-mu.vercel.app/api/fred';
 // FRED series to fetch. Order must match STRESS.components below.
 // VIX and MOVE are not on FRED; keep them mock or wire to other feeds.
 const FRED_SERIES = [
-  null,                // VIX      → CBOE (mock for now)
+  'VIXCLS',                // VIX      → CBOE (mock for now)
   null,                // MOVE     → ICE (mock for now)
   'BAMLH0A0HYM2',      // HY OAS
   'T10Y2Y',            // 10Y-2Y curve
   'DTWEXBGS',          // Broad dollar index
   'NFCI',              // Chicago Fed NFCI
+  'DGS10',             // 10-årsräntan
 ];
 
 // Hook: fetch latest + prior observation per series, compute delta.
